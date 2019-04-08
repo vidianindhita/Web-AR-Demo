@@ -1,0 +1,17 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+
+#placement {
+	position: fixed;
+	top: 200px;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+img #image-object {
+	width: 300px;
+	height: 300px;
+}
