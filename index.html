@@ -7,9 +7,10 @@
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;">
       <a-marker preset="hiro">
           <!-- <a-box position='0 0.5 0' material='color: yellow;'></a-box> -->
-          <a-text value="Hello, World!"></a-text>
-          <a-image src="assets/mango.png"></a-image>
+          <!-- <a-text value="Hello, World!"></a-text> -->
+          <a-image id="image-container" src="assets/mango.png"></a-image>
       </a-marker>
+      <a-image id="image-container" src="assets/mango.png"></a-image>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
