@@ -6,8 +6,11 @@
 <link rel="stylesheet" href="css/style.css">
   <body>
   	<div id="placement">
-	    <img id="image-object" src="assets/mango.png" alt="mango" style="width: 300px; height: 300px;">
-	    <h3>YOOOO</h3>
+  		<!-- <button class="button-song">
+	        SONG
+	    </button> -->
+	    <img id="image-object" style="width: 300px; height: 300px; border-style: none; outline: none;">
+	    <h3 id="text-object"></h3>
 	</div>
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;">
       <!-- <a-marker preset="hiro">
@@ -18,7 +21,63 @@
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-  <script type="text/javascript">
-  	
+  <script>
+	var dance;
+	var value;
+
+  	$(document).ready(function () {
+        $(".button-song").click(function () {
+            $.get("https://staging.vidia.site/obtain_song_info", function(data, status){
+            	dance = data.songFeatures.danceability;
+
+            	if (dance < 0.25) {
+            		$('#text-object').text("Calm Song");
+            		$('#image-object').attr('src', 'assets/mango.png');
+            	} else if (dance >= 0.25 && dance < 0.5) {
+            		$('#text-object').text("Chill Song");
+            		$('#image-object').attr('src', 'assets/banana.png');
+            	} else if (dance >= 0.5 && dance < 0.75) {
+					$('#text-object').text("Happy Song");
+					$('#image-object').attr('src', 'assets/orange.png');
+            	} else {
+            		$('#text-object').text("Energetic Song");
+            		$('#image-object').attr('src', 'assets/pineapple.png');
+            	}
+                // alert("Data: " + data + "\nStatus: " + status);
+                console.log(dance);
+            });
+        });
+    });
+
+    function fetchdata(){
+		$.ajax({
+			url: 'https://staging.vidia.site/obtain_song_info',
+			type: 'get',
+			success: function(response){
+			   	// Perform operation on the return value
+			   	//alert(response);
+			   	value = response.songFeatures.danceability;
+			   	if (value < 0.25) {
+            		$('#text-object').text("Calm Song");
+            		$('#image-object').attr('src', 'assets/mango.png');
+            	} else if (value >= 0.25 && value < 0.5) {
+            		$('#text-object').text("Chill Song");
+            		$('#image-object').attr('src', 'assets/banana.png');
+            	} else if (value >= 0.5 && value < 0.75) {
+					$('#text-object').text("Happy Song");
+					$('#image-object').attr('src', 'assets/orange.png');
+            	} else {
+            		$('#text-object').text("Energetic Song");
+            		$('#image-object').attr('src', 'assets/pineapple.png');
+            	}
+			   	console.log(value);
+			}
+		});
+	}
+
+	$(document).ready(function(){
+		setInterval(fetchdata,500);
+	});
+
   </script>
 </html>
