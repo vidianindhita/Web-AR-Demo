@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
   <body>
-  	<div id="placement" class="hue">
+  	<div id="placement">
 
   		<!-- <button class="button-song">
 	        SONG
@@ -13,6 +13,10 @@
 	    <!-- <img id="image-object" style="width: 300px; height: 300px; border-style: none; outline: none;">
 	    <h3 id="text-object"></h3> -->
 	</div>
+	<!-- <div id="calm-song" class="hue"></div>
+	<div id="chill-song" class="brightness"></div>
+	<div id="happy-song" class="blur"></div>
+	<div id="energetic-song" class="saturate"></div> -->
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;">
     	
       <a-entity camera></a-entity>
@@ -55,17 +59,50 @@
 			   	//alert(response);
 			   	value = response.songFeatures.danceability;
 			   	if (value < 0.25) {
-            		$('#text-object').text("Calm Song");
-            		$('#image-object').attr('src', 'assets/mango.png');
+            		// $('#text-object').text("Calm Song");
+            		// $('#image-object').attr('src', 'assets/mango.png');
+            		// $('#calm-song').show();
+            		// $('#chill-song').hide();
+            		// $('#happy-song').hide();
+            		// $('#energetic-song').hide();
+            		$('#placement').removeClass("hue");
+            		$('#placement').removeClass("saturate");
+            		$('#placement').removeClass("brightness");
+            		$('#placement').addClass("blur");
             	} else if (value >= 0.25 && value < 0.5) {
-            		$('#text-object').text("Chill Song");
-            		$('#image-object').attr('src', 'assets/banana.png');
+            		// $('#text-object').text("Chill Song");
+            		// $('#image-object').attr('src', 'assets/banana.png');
+            		// $('#calm-song').hide();
+            		// $('#chill-song').show();
+            		// $('#happy-song').hide();
+            		// $('#energetic-song').hide();
+            		$('#placement').removeClass("hue");
+            		$('#placement').removeClass("blur");
+            		$('#placement').removeClass("brightness");
+            		$('#placement').addClass("saturate");
             	} else if (value >= 0.5 && value < 0.75) {
-					$('#text-object').text("Happy Song");
-					$('#image-object').attr('src', 'assets/orange.png');
+					// $('#text-object').text("Happy Song");
+					// $('#image-object').attr('src', 'assets/orange.png');
+					// $('#calm-song').hide();
+     //        		$('#chill-song').hide();
+     //        		$('#happy-song').show();
+     //        		$('#energetic-song').hide();
+     				$('#placement').removeClass("blur");
+            		$('#placement').removeClass("saturate");
+            		$('#placement').removeClass("brightness");
+     				$('#placement').addClass("hue");
             	} else {
-            		$('#text-object').text("Energetic Song");
-            		$('#image-object').attr('src', 'assets/pineapple.png');
+            		// $('#text-object').text("Energetic Song");
+            		// $('#image-object').attr('src', 'assets/pineapple.png');
+            		// $('#calm-song').hide();
+            		// $('#chill-song').hide();
+            		// $('#happy-song').hide();
+            		// $('#energetic-song').show();
+            		$('#placement').removeClass("hue");
+            		$('#placement').removeClass("saturate");
+            		$('#placement').removeClass("blur");
+            		$('#placement').addClass("brightness");
+
             	}
 			   	console.log(value);
 			}
