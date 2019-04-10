@@ -61,10 +61,7 @@
 			   	if (value < 0.25) {
             		// $('#text-object').text("Calm Song");
             		// $('#image-object').attr('src', 'assets/mango.png');
-            		// $('#calm-song').show();
-            		// $('#chill-song').hide();
-            		// $('#happy-song').hide();
-            		// $('#energetic-song').hide();
+            		$('#placement').css("background", "#834ab2");
             		$('#placement').removeClass("hue");
             		$('#placement').removeClass("saturate");
             		$('#placement').removeClass("brightness");
@@ -72,36 +69,27 @@
             	} else if (value >= 0.25 && value < 0.5) {
             		// $('#text-object').text("Chill Song");
             		// $('#image-object').attr('src', 'assets/banana.png');
-            		// $('#calm-song').hide();
-            		// $('#chill-song').show();
-            		// $('#happy-song').hide();
-            		// $('#energetic-song').hide();
+            		$('#placement').css("background", "#e59c75");
             		$('#placement').removeClass("hue");
             		$('#placement').removeClass("blur");
-            		$('#placement').removeClass("brightness");
-            		$('#placement').addClass("saturate");
+            		$('#placement').removeClass("saturate");
+            		$('#placement').addClass("brightness");
             	} else if (value >= 0.5 && value < 0.75) {
 					// $('#text-object').text("Happy Song");
 					// $('#image-object').attr('src', 'assets/orange.png');
-					// $('#calm-song').hide();
-     //        		$('#chill-song').hide();
-     //        		$('#happy-song').show();
-     //        		$('#energetic-song').hide();
+					$('#placement').css("background", "#f2db59");
      				$('#placement').removeClass("blur");
-            		$('#placement').removeClass("saturate");
+            		$('#placement').removeClass("hue");
             		$('#placement').removeClass("brightness");
-     				$('#placement').addClass("hue");
+     				$('#placement').addClass("saturate");
             	} else {
             		// $('#text-object').text("Energetic Song");
             		// $('#image-object').attr('src', 'assets/pineapple.png');
-            		// $('#calm-song').hide();
-            		// $('#chill-song').hide();
-            		// $('#happy-song').hide();
-            		// $('#energetic-song').show();
-            		$('#placement').removeClass("hue");
+            		$('#placement').css("background", "#7aebff");
+            		$('#placement').removeClass("brightness");
             		$('#placement').removeClass("saturate");
             		$('#placement').removeClass("blur");
-            		$('#placement').addClass("brightness");
+            		$('#placement').addClass("hue");
 
             	}
 			   	console.log(value);
