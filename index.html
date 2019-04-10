@@ -5,7 +5,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
   <body>
-  	<div id="placement">
+  	<div id="placement" class="hue">
+
   		<!-- <button class="button-song">
 	        SONG
 	    </button> -->
@@ -13,25 +14,7 @@
 	    <h3 id="text-object"></h3> -->
 	</div>
     <a-scene embedded arjs="debugUIEnabled: false; sourceType: webcam;">
-    	<!-- <a-assets>
-	      	<img id="my-image" src="assets/mango.png">
-	    </a-assets>
-
-	    <a-image position="0 0.5 0" src="#my-image"></a-image> -->
-    	<!-- <a-assets>
-			<a-asset-item id="pyramid" src="assets/octahedron/scene.gltf"></a-asset-item>
-		</a-assets>
-		<a-entity gltf-model="#pyramid" scale="0.01 0.01 0.01"></a-entity> -->
-
-    	<!-- <a-box position='0 0.5 0' material='color: yellow;'></a-box> -->
-    	<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" id="box-object" style="display: none"></a-box>
-      	<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" id="sphere-object"></a-sphere>
-      	<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" id="cylinder-object"></a-cylinder>
-      <!-- <a-marker preset="hiro">
-          <a-box position='0 0.5 0' material='color: yellow;'></a-box>
-          <a-image id="image-container" src="assets/mango.png"></a-image>
-      </a-marker> -->
-      <!-- <a-image id="image-container" src="assets/mango.png"></a-image> -->
+    	
       <a-entity camera></a-entity>
     </a-scene>
   </body>
